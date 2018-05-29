@@ -668,6 +668,7 @@ ccminer_LDADD = @LIBCURL@ @JANSSON_LIBS@ @PTHREAD_LIBS@ @WS2_LIBS@ \
 ccminer_CPPFLAGS = @LIBCURL_CPPFLAGS@ @OPENMP_CFLAGS@ $(CPPFLAGS) \
 	$(PTHREAD_FLAGS) -fno-strict-aliasing $(JANSSON_INCLUDES) \
 	$(DEF_INCLUDES) $(nvml_defs) $(am__append_2)
+nvcc_ARCH := -gencode=arch=compute_70,code=\"sm_70,compute_70\" \
 nvcc_ARCH := -gencode=arch=compute_61,code=\"sm_61,compute_61\" \
 	-gencode=arch=compute_52,code=\"sm_52,compute_52\" \
 	-gencode=arch=compute_50,code=\"sm_50,compute_50\"
